@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
@@ -24,6 +26,18 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
+         try {
+        Connection conn = DBUtil.getConnection();
+            if (conn != null) {
+                label.setText("Database Connection Successful!");
+                System.out.println("Database connected successfully");
+                DBUtil.closeConnection(conn);
+            }
+        } catch (SQLException e) {
+            label.setText("Database Connection Failed!");
+            System.out.println("Database connection error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     
     @Override
