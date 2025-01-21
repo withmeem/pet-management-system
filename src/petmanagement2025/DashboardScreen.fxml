@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petmanagement2025.DashboardController">
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity"/>
+            <Button text="Add Pet" onAction="#showAddPet" maxWidth="Infinity"/>
+            <Button text="Pet List" onAction="#showPetList" maxWidth="Infinity"/>
+            <Button text="Delete Pet" onAction="#showDeletePet" maxWidth="Infinity"/>
+            <Button text="History" onAction="#showHistory" maxWidth="Infinity"/>
+            <Button text="Logout" onAction="#handleLogout" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            
+            <Label text="Dashboard Overview" style="-fx-font-size: 24px;"/>
+            
+            <GridPane hgap="20" vgap="20" alignment="CENTER">
+                <VBox alignment="CENTER" style="-fx-background-color: #e8f5e9; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="Total Pets" style="-fx-font-size: 18px;"/>
+                    <Label fx:id="totalPetsLabel" style="-fx-font-size: 24px;"/>
+                </VBox>
+                
+                <VBox alignment="CENTER" style="-fx-background-color: #e3f2fd; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Pet Types" style="-fx-font-size: 18px;"/>
+                    <Label fx:id="petTypesLabel" style="-fx-font-size: 24px;"/>
+                </VBox>
+                
+                <VBox alignment="CENTER" style="-fx-background-color: #fff3e0; -fx-padding: 20;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="Max Age" style="-fx-font-size: 18px;"/>
+                    <Label fx:id="maxAgeLabel" style="-fx-font-size: 24px;"/>
+                </VBox>
+            </GridPane>
+            
+            <TableView fx:id="recentActivityTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="timeColumn" text="Time"/>
+                    <TableColumn fx:id="actionColumn" text="Action"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

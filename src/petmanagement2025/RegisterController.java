@@ -25,6 +25,11 @@ public class RegisterController {
             return;
         }
         
+        if (password.isEmpty() || username.isEmpty()) {
+            messageLabel.setText("Fields cant be empty.");
+            return;
+        }
+        
         try (Connection conn = DBUtil.getConnection()) {
             String query = "INSERT INTO users (username, password) VALUES (?, ?)";
             PreparedStatement pst = conn.prepareStatement(query);
