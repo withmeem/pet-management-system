@@ -2,16 +2,77 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petmanagement2025.DashboardController">
+<BorderPane 
+    prefHeight="600.0" 
+    prefWidth="800.0" 
+    style="-fx-background-color: #f4f4f4;" 
+    xmlns="http://javafx.com/javafx/8" 
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="petmanagement2025.DashboardController">
+    
     <left>
-        <VBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
-            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity"/>
-            <Button text="Add Pet" onAction="#showAddPet" maxWidth="Infinity"/>
-            <Button text="Pet List" onAction="#showPetList" maxWidth="Infinity"/>
-            <Button text="Delete Pet" onAction="#showDeletePet" maxWidth="Infinity"/>
-            <Button text="History" onAction="#showHistory" maxWidth="Infinity"/>
-            <Button text="Logout" onAction="#handleLogout" maxWidth="Infinity"/>
+        <VBox 
+            spacing="10" 
+            style="-fx-background-color: #f87024; 
+                   -fx-padding: 15; 
+                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);">
+            
+            <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
+                <Image url="@cat.png"/>
+            </ImageView>
+            
+            <Separator/>
+            
+            <Button 
+                text="Dashboard" 
+                onAction="#showDashboard" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
+            
+            <Button 
+                text="Add Pet" 
+                onAction="#showAddPet" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
+            
+            <Button 
+                text="Pet List" 
+                onAction="#showPetList" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
+            
+            <Button 
+                text="Delete Pet" 
+                onAction="#showDeletePet" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
+            
+            <Button 
+                text="History" 
+                onAction="#showHistory" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
+            
+            <Button 
+                text="Logout" 
+                onAction="#handleLogout" 
+                maxWidth="Infinity" 
+                style="-fx-background-color: derive(#f87024, 20%); 
+                       -fx-text-fill: white; 
+                       -fx-font-weight: bold;"/>
         </VBox>
     </left>
     
@@ -19,26 +80,55 @@
         <VBox spacing="20" alignment="CENTER">
             <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
             
-            <Label text="Dashboard Overview" style="-fx-font-size: 24px;"/>
+            <Label 
+                text="Dashboard Overview" 
+                style="-fx-font-size: 24px; 
+                       -fx-font-weight: bold; 
+                       -fx-text-fill: #333333;"/>
             
             <GridPane hgap="20" vgap="20" alignment="CENTER">
-                <VBox alignment="CENTER" style="-fx-background-color: #e8f5e9; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <VBox 
+                    alignment="CENTER" 
+                    style="-fx-background-color: #e8f5e9; 
+                           -fx-background-radius: 10; 
+                           -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0); 
+                           -fx-padding: 20;" 
+                    GridPane.columnIndex="0" 
+                    GridPane.rowIndex="0">
                     <Label text="Total Pets" style="-fx-font-size: 18px;"/>
-                    <Label fx:id="totalPetsLabel" style="-fx-font-size: 24px;"/>
+                    <Label fx:id="totalPetsLabel" style="-fx-font-size: 24px; -fx-text-fill: #2E7D32;"/>
                 </VBox>
                 
-                <VBox alignment="CENTER" style="-fx-background-color: #e3f2fd; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <VBox 
+                    alignment="CENTER" 
+                    style="-fx-background-color: #e3f2fd; 
+                           -fx-background-radius: 10; 
+                           -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0); 
+                           -fx-padding: 20;" 
+                    GridPane.columnIndex="1" 
+                    GridPane.rowIndex="0">
                     <Label text="Pet Types" style="-fx-font-size: 18px;"/>
-                    <Label fx:id="petTypesLabel" style="-fx-font-size: 24px;"/>
+                    <Label fx:id="petTypesLabel" style="-fx-font-size: 24px; -fx-text-fill: #1565C0;"/>
                 </VBox>
                 
-                <VBox alignment="CENTER" style="-fx-background-color: #fff3e0; -fx-padding: 20;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <VBox 
+                    alignment="CENTER" 
+                    style="-fx-background-color: #fff3e0; 
+                           -fx-background-radius: 10; 
+                           -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0); 
+                           -fx-padding: 20;" 
+                    GridPane.columnIndex="2" 
+                    GridPane.rowIndex="0">
                     <Label text="Max Age" style="-fx-font-size: 18px;"/>
-                    <Label fx:id="maxAgeLabel" style="-fx-font-size: 24px;"/>
+                    <Label fx:id="maxAgeLabel" style="-fx-font-size: 24px; -fx-text-fill: #E65100;"/>
                 </VBox>
             </GridPane>
             
-            <TableView fx:id="recentActivityTable" VBox.vgrow="ALWAYS">
+            <TableView 
+                fx:id="recentActivityTable" 
+                VBox.vgrow="ALWAYS" 
+                style="-fx-background-radius: 10; 
+                       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
                 <columns>
                     <TableColumn fx:id="timeColumn" text="Time"/>
                     <TableColumn fx:id="actionColumn" text="Action"/>
