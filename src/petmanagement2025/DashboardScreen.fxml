@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>  
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="petmanagement2025.DashboardController">
+    
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+         <GridPane>
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+                  <Button onAction="#handleLogout" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Logout" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                    <Label fx:id="totalPetsLabel" style="-fx-font-size: 24; -fx-text-fill: #2e7d32;" text="Pet Count" GridPane.columnIndex="1" />
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashbaord">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Text>
+            </children>
+         </GridPane>
+
+            <!-- Add Pet Section -->
+            <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 10;">
+                <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Add New Pet" />
+                <HBox spacing="10">
+                    <TextField fx:id="nameField" promptText="Pet Name" style="-fx-pref-width: 200;" />
+                    <ComboBox fx:id="typeComboBox" promptText="Select Type" style="-fx-pref-width: 150;" />
+                    <DatePicker fx:id="birthdatePicker" promptText="Birthdate" style="-fx-pref-width: 150;" />
+                    <Button onAction="#handleAddPet" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Add Pet" />
+                </HBox>
+            </VBox>
+
+            <!-- Delete Pet Section -->
+            <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 10;">
+                <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Delete Pet" />
+                <HBox spacing="10">
+                    <TextField fx:id="petIdField" promptText="Enter Pet ID" style="-fx-pref-width: 200;" />
+                    <Button onAction="#handleDeletePet" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Delete Pet" />
+                </HBox>
+            </VBox>
+
+            <!-- Pets Table -->
+            <TableView fx:id="petTable" prefHeight="299.0" prefWidth="760.0" style="-fx-background-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="idColumn" prefWidth="50" text="ID" />
+                    <TableColumn fx:id="nameColumn" prefWidth="200" text="Name" />
+                    <TableColumn fx:id="typeColumn" prefWidth="150" text="Type" />
+                    <TableColumn fx:id="ageColumn" prefWidth="50" text="Age" />
+                    <TableColumn fx:id="bdColumn" prefWidth="150" text="Birthdate" />
+                </columns>
+            </TableView>
+
+            <!-- Message Label -->
+            <Label fx:id="messageLabel" prefHeight="0.0" prefWidth="760.0" style="-fx-font-weight: bold; -fx-padding: 10;" />
+        </VBox>
+    </center>
+</BorderPane>
